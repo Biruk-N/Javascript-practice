@@ -280,28 +280,47 @@ const Wizard1 = new Wizard('Shelly', 'Healer');
 const Wizard2 = new Wizard('Shawn', 'Dark Magic');
 
 // pass by reference vs by value
+
 // in javascript primitive types are immutable
+
 // mean not change also they don't know each like object
 
 // var a = 5;
+
 // var b = a;
+
 // b++; a not change but in object
+
 let obj1 = {name: 'yao', password: '123'};
+
 let obj2 = obj1;
 
 obj2.password = 'easypeasy';//pass by reference 
+
 console.log(obj1);
+
 console.log(obj2);
+
 // output is {name: 'yao', password: 'easypeasy'}
- // {name: 'yao', password: 'easypeasy'}
- // this happens b/c it's stored in memory and it pass by reference 
- // it important b/c only store once
+
+// {name: 'yao', password: 'easypeasy'}
+
+// this happens b/c it's stored in memory and it pass by reference 
+
+// it important b/c only store once
+
 let obj = {a: 'a', b: 'b', c:'c'};
+
 let clone = Object.assign({}, obj);
+
 let clone2 = {...obj};//same but clean and nice
+
 obj.c = 5;
+
 console.log(clone);//output not affect by change in obj
+
 console.log(clone2);//output not affect by change in obj
+
 let obj = {
     a: 'a', 
     b: 'b', 
@@ -309,42 +328,69 @@ let obj = {
         deep: 'try and copy'
     }
 };
+
 obj.c.deep = 'haahaha';
+
 let clone = Object.assign({}, obj);
+
 let clone2 = {...obj};
+
 console.log(clone);//output affect by change in obj 
+
 // b/c it's shallow clone it clone the first level
+
 console.log(clone2);//output affect by change in obj
+
 // to fix 
+
 let superClone = JSON.parse(JSON.stringify(obj))
+
 console.log(superClone)
+
 // type coercion
+
 1 == '1' 
+
 // == compare to value only in coercion 
+
 // is a language converting a certain type to another type
+
 // all language have coercion
+
 if(1){
     console.log(5);
 }
+
 if (0) {
     console.log(5);//output is empty b/c 0 is false coercion
 }
+
 1 == true
+
 -0 === +0 //true
+
 Object.is(-0, +0) //false
 
 // ES7
+
 'hellooo'.includes('o') //true
+
 const pe = ['ak', 'fg', 'sf'];
+
 pe.includes('fg')//true only if it's there
 
 const square = (x) => x**2//means square
+
 square(2) //4
+
 const square2 = (x) => x**3
+
 square2(2) //8
 
 // ES8
+
 'turtle'.padStart(10)//"    turtle"
+
 'turtle'.padEtart(10)//"turtle    "
 
 const fun = (
@@ -355,11 +401,13 @@ const fun = (
     ) => {
     console.log(a);
 }
+
 fun(1, 2, 3, 4,)
 
 Object.values
 Object.entries
 Object.keys
+
 let obj = {
     username: 'santa',
     username1: 'rule',
@@ -369,6 +417,7 @@ let obj = {
 Object.keys(obj).forEach((key, index0) =>{
     console.log(key, obj[key]);
 })//early
+
 Object.values(obj).forEach(value => {
     console.log(value)
 }) 
@@ -376,6 +425,7 @@ Object.values(obj).forEach(value => {
 // santa
 // rule
 // aop
+
 Object.entries(obj).forEach(value => {
     console.log(value)
 }) 
