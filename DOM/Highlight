@@ -1,0 +1,80 @@
+Advice for developer DRY donot repeat you'r self
+
+
+Document Model Object
+. change all the html elements in the page
+. change all the html attributes in the page
+. change all the css styles in the page
+. remove existing html element and attribute
+. add new html elements and attributes
+. javascript can react to all exisiting html events in page
+. javascript can create new html events in the page 
+
+
+window is is an object big parent of all
+-----------
+DOM Selectors
+getElement by TagName
+getElement by ClassName
+getElement by Id is fast b/c it's only one
+
+query selector select single value by default
+query selectorAll
+
+getAttribute
+setAttribute
+
+##Changing Styles
+style.{property} //ok
+
+className //best
+classList //best
+
+classList.add
+classList.reomoved
+classList.toggle is mean on/off
+
+##Bonus
+innerHTML//dangerous
+parent element ?
+child element ?
+
+
+##It's important to cache selector
+
+
+Event Listner
+### Most seen are mouse event and keyboard event
+
+takes 2 parameter Event and Function
+		eg. button.addEventListener("click", function()
+		{
+			console.log("click!!!!!!")
+		})
+##for this we use 
+ var button = document.getElementsByTagName("button")[0];
+ not var button = document.getElementsByTagName("button")
+  b/c it's an array
+
+##To create a text -------->>> createTextNode
+eg var li = document.createElement("li");
+	li.appendChild(document.createTextNode("Testing"));
+	ul.appendChild(li);
+appendChild is for parent
+main point from above is 
+	createElement
+	createTextNode
+	appendChild to ul
+example of take an input
+	console.log(input.value)
+	li.appendChild(document.createTextNode(input.value));
+
+
+##Advanced Javascript
+scope
+------------
+Javascript Conditions
+----------
+
+ternary operator
+switch
